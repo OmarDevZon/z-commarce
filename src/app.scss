@@ -1,0 +1,10 @@
+
+html{
+    scroll-snap-type:y mandatory;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #1d1d1e;
+    background-image: url('./assets/Background.png');
+}

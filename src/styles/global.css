@@ -1,0 +1,7 @@
+h2 {
+  @apply text-4xl text-red-500 font-bold;
+}
+
+span {
+  @apply py-2 w-2/3 text-center text-gray-500;
+}
