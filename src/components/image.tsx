@@ -1,7 +1,7 @@
 export type TImage = {
   alt?: string;
   imgSrc: string;
-  className: string;
+  className?: string;
 };
 
 const Image = ({ imgSrc, className, alt }: TImage) => {

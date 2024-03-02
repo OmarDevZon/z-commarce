@@ -1,13 +1,13 @@
 /* eslint-disable prefer-const */
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdClose } from "react-icons/md";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { motion } from "framer-motion";
-import logoLight from "../../assets/image/logoLight.png";
-import orebilogo from "../../assets/image/orebilogo.png";
-import Image from "../image";
-import { TNavItem, navBarList } from "../constants";
+import logoLight from "../../../assets/image/logoLight.png";
+import orebilogo from "../../../assets/image/orebilogo.png";
+import Image from "../../image";
+import { TNavItem, navBarList } from "../../constants";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(true);
