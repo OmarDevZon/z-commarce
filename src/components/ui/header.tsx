@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdClose } from "react-icons/md";
@@ -10,7 +11,7 @@ import { TNavItem, navBarList } from "../constants";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(true);
-  const [sidenav, setSidenav] = useState(false);
+  const [sideNav, setSideNav] = useState(false);
   const [category, setCategory] = useState(false);
   const [brand, setBrand] = useState(false);
   const location = useLocation();
@@ -36,6 +37,7 @@ const Header = () => {
             </div>
           </Link>
           <div>
+            {/* desktop menu  */}
             {showMenu && (
               <motion.ul
                 initial={{ y: 30, opacity: 0 }}
@@ -49,7 +51,7 @@ const Header = () => {
                       key={_id}
                       className="flex font-normal hover:font-bold w-20 h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
                       to={link}
-                      state={{ data: location.pathname.split("/")[1] }}
+                      // state={{ data: location.pathname.split("/")[1] }}
                     >
                       <li>{title}</li>
                     </NavLink>
@@ -57,12 +59,13 @@ const Header = () => {
                 </>
               </motion.ul>
             )}
+            {/* menu icon  */}
             <HiMenuAlt2
-              onClick={() => setSidenav(!sidenav)}
+              onClick={() => setSideNav(!sideNav)}
               className="inline-block md:hidden cursor-pointer w-8 h-6 absolute top-6 right-4"
             />
-            {sidenav && (
-              <div className="fixed top-0 left-0 w-full h-screen bg-black text-gray-200 bg-opacity-80 z-50">
+            {sideNav && (
+              <div className="fixed top-0 left-0 w-full h-screen bg-black text-gray-200 z-50">
                 <motion.div
                   initial={{ x: -300, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
@@ -84,7 +87,7 @@ const Header = () => {
                           <NavLink
                             to={item.link}
                             state={{ data: location.pathname.split("/")[1] }}
-                            onClick={() => setSidenav(false)}
+                            onClick={() => setSideNav(false)}
                           >
                             {item.title}
                           </NavLink>
@@ -139,7 +142,7 @@ const Header = () => {
                     </div>
                   </div>
                   <span
-                    onClick={() => setSidenav(false)}
+                    onClick={() => setSideNav(false)}
                     className="w-8 h-8 border-[1px] border-gray-300 absolute top-2 -right-10 text-gray-300 text-2xl flex justify-center items-center cursor-pointer hover:border-red-500 hover:text-red-500 duration-300"
                   >
                     <MdClose />

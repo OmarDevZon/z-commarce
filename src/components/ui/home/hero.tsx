@@ -1,7 +1,7 @@
 export const Hero = () => {
   return (
     <section className="min-h-screen">
-      <div> This is a hero </div>
+      <div className=""> This is a hero </div>
     </section>
   );
 };
