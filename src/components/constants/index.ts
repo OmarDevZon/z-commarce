@@ -15,7 +15,17 @@ export const navBarList: TNavBarList = [
   {
     _id: 1001,
     title: "Home",
-    link: "/",
+    link: "/home",
+  },
+  {
+    _id: 1002,
+    title: "Shop",
+    link: "/shop",
+  },
+  {
+    _id: 1002,
+    title: "Omar",
+    link: "/omar",
   },
   {
     _id: 1002,
