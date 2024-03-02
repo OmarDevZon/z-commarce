@@ -3,9 +3,9 @@ import { MainLayout } from "../components/layout/MainLayout";
 import { Recovery } from "../pages/Recovery";
 import { Register } from "../pages/Register";
 import { Profile } from "../pages/Profile";
-import { Login } from "../pages/login";
-import { Home } from "../pages/home";
-import { Contact } from "../pages/contact";
+import { Home } from "../pages/Home";
+import { Login } from "../pages/Login";
+import { Contact } from "../pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Login  />,
+        element: <Home  />,
       },
       {
         path: "/home",

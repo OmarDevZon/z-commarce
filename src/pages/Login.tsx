@@ -34,7 +34,7 @@ export const Login = () => {
   };
 
   return (
-    <>
+    <div className="bg">
       <div className="container mx-auto">
         {/* <Toaster position="top-center" reverseOrder={false}></Toaster> */}
 
@@ -91,6 +91,6 @@ export const Login = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
