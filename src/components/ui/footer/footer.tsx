@@ -4,6 +4,7 @@ import { FooterListTitle } from "./FooterListTitle";
 import { motion } from "framer-motion";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
+import FooterBottom from "./FooterBottom";
 
 export const Footer = () => {
   const [subscription, setSubscription] = useState(false);
@@ -158,6 +159,8 @@ export const Footer = () => {
           </div>
         </div>
       </div>
+
+      <FooterBottom />
     </section>
   );
 };
