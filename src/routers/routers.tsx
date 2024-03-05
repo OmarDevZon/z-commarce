@@ -6,6 +6,7 @@ import { Profile } from "../pages/Profile";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Contact } from "../pages/Contact";
+import DashboardLayout from "../components/layout/dashbord/DashboardLayout";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,41 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
     ],
+  },
+
+  {
+    path: "user/dashboard",
+    element: <DashboardLayout />,
+    // children: [
+    //   {
+    //     path: "/",
+    //     element: <Home  />,
+    //   },
+    //   {
+    //     path: "/home",
+    //     element: <Home />,
+    //   },
+    //   {
+    //     path: "/login",
+    //     element: <Login />,
+    //   },
+    //   {
+    //     path: "/recovery",
+    //     element: <Recovery/>,
+    //   },
+    //   {
+    //     path: "/register",
+    //     element: <Register/>,
+    //   },
+    //   {
+    //     path: "/profile",
+    //     element: <Profile/>,
+    //   },
+    //   {
+    //     path: "/contact",
+    //     element: <Contact />,
+    //   },
+    // ],
   },
 ]);
 
