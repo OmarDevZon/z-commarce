@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable prefer-const */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdClose } from "react-icons/md";
 import { HiMenuAlt2 } from "react-icons/hi";
@@ -9,12 +10,16 @@ import orebilogo from "../../../assets/image/orebilogo.png";
 import Image from "../../image";
 import { TNavItem, navBarList } from "../../constants";
 import { SubNavbar } from "./SubNavbar";
+import { Avatar } from "antd";
+import { FaShoppingCart, FaUser } from "react-icons/fa";
 
 const Header = ({ subHeader }: { subHeader: boolean }) => {
   const [showMenu, setShowMenu] = useState(true);
   const [sideNav, setSideNav] = useState(false);
   const [category, setCategory] = useState(false);
   const [brand, setBrand] = useState(false);
+  const [showUser, setShowUser] = useState(false);
+  const ref: any = useRef();
   const location = useLocation();
   useEffect(() => {
     let ResponsiveMenu = () => {
@@ -27,6 +32,16 @@ const Header = ({ subHeader }: { subHeader: boolean }) => {
     ResponsiveMenu();
     window.addEventListener("resize", ResponsiveMenu);
   }, []);
+
+  useEffect(() => {
+    document.body.addEventListener("click", (e) => {
+      if (ref.current.contains(e.target)) {
+        setShowUser(true);
+      } else {
+        setShowUser(false);
+      }
+    });
+  }, [showUser, ref]);
 
   return (
     <>
@@ -65,6 +80,7 @@ const Header = ({ subHeader }: { subHeader: boolean }) => {
                   </>
                 </motion.ul>
               )}
+
               {/* menu icon  */}
               <HiMenuAlt2
                 onClick={() => setSideNav(!sideNav)}
@@ -157,6 +173,44 @@ const Header = ({ subHeader }: { subHeader: boolean }) => {
                     </span>
                   </motion.div>
                 </div>
+              )}
+            </div>
+            <div className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative">
+              <div
+                onClick={() => setShowUser(!showUser)}
+                className="flex"
+                ref={ref}
+              >
+                <Avatar
+                  size={40}
+                  src="https://scontent.fdac14-1.fna.fbcdn.net/v/t39.30808-1/358557027_1315097246054302_588325831363490884_n.jpg?stp=c0.0.40.40a_cp0_dst-jpg_p40x40&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=5d1fWYqf--YAX9nwEz2&_nc_ht=scontent.fdac14-1.fna&oh=00_AfDFw2awBlPPcvYjy4xVDXJa_Nw5S3ShGDS5iLBrukhT9A&oe=65EDDF71"
+                  alt="My Avatar"
+                />
+              </div>
+              {showUser && (
+                <motion.ul
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute top-14 right-0 z-50 bg-black w-44 text-[#767676] h-auto p-4 pb-6"
+                >
+                  <Link to="/signin">
+                    <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                      Login
+                    </li>
+                  </Link>
+                  <Link onClick={() => setShowUser(false)} to="/signup">
+                    <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                      Sign Up
+                    </li>
+                  </Link>
+                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                    Profile
+                  </li>
+                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400  hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                    Others
+                  </li>
+                </motion.ul>
               )}
             </div>
           </div>

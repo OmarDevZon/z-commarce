@@ -6,7 +6,9 @@ import { Profile } from "../pages/Profile";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Contact } from "../pages/Contact";
-import DashboardLayout from "../components/layout/dashbord/DashboardLayout";
+import DashboardLayout from "../components/layout/dashboard/DashboardLayout";
+import { Dashboard } from "../pages/seller/Dashboard";
+import { AddProduct } from "../pages/seller/AddProduct";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home  />,
+        element: <Home />,
       },
       {
         path: "/home",
@@ -27,15 +29,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/recovery",
-        element: <Recovery/>,
+        element: <Recovery />,
       },
       {
         path: "/register",
-        element: <Register/>,
+        element: <Register />,
       },
       {
         path: "/profile",
-        element: <Profile/>,
+        element: <Profile />,
       },
       {
         path: "/contact",
@@ -45,38 +47,18 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "user/dashboard",
+    path: "seller/dashboard",
     element: <DashboardLayout />,
-    // children: [
-    //   {
-    //     path: "/",
-    //     element: <Home  />,
-    //   },
-    //   {
-    //     path: "/home",
-    //     element: <Home />,
-    //   },
-    //   {
-    //     path: "/login",
-    //     element: <Login />,
-    //   },
-    //   {
-    //     path: "/recovery",
-    //     element: <Recovery/>,
-    //   },
-    //   {
-    //     path: "/register",
-    //     element: <Register/>,
-    //   },
-    //   {
-    //     path: "/profile",
-    //     element: <Profile/>,
-    //   },
-    //   {
-    //     path: "/contact",
-    //     element: <Contact />,
-    //   },
-    // ],
+    children: [
+      {
+        path: "",
+        element: <Dashboard />,
+      },
+      {
+        path: "add-product",
+        element: <AddProduct />,
+      },
+    ],
   },
 ]);
 

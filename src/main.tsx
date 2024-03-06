@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./app.scss";
+import "react-quill/dist/quill.snow.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./routers/routers";
 import { store } from "./redux/store";

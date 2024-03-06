@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { FaCaretDown, FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { ShowHiddenMouseEnter } from "../../../utils/ShowHidden";
 
 export const SubNavbar = () => {
   const [show, setShow] = useState(false);

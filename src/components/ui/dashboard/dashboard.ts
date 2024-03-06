@@ -16,8 +16,8 @@ export const dashboard = [
   },
 
   {
-    name: "Make Order",
-    link: "/dashboard/offline-order-make",
+    name: "Add Product",
+    link: "/seller/dashboard/add-product",
     icon: BsPencilSquare,
     margin: true,
   },
