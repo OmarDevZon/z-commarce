@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { OutLineButton } from "../../utils/Button";
 // import ApexChart, { TChartData } from "../../utils/ApexChart";
 
-export const Dashboard = () => {
+export const SellerDashboard = () => {
   const data = [
     { x: "Category 1", y: 30 },
     { x: "Category 2", y: 40 },

@@ -4,7 +4,7 @@ import { ToggleButton } from "./toggleButton";
 import { useState } from "react";
 import { Links } from "./Links";
 
-export const Sidebar = () => {
+export const Sidebar1 = () => {
   const [open, setOpen] = useState(false);
 
   // const variants = {

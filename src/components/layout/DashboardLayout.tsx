@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { Sidebar } from "../../ui/dashboard/Sidebar";
-import Header from "../../ui/header/Header";
+import { Sidebar } from "../ui/dashboard/Sidebar";
+import Header from "../ui/header/Header";
 
 const DashboardLayout = () => {
   //   const [openDrawer, setOpenDrawer] = useState(true);
@@ -9,7 +9,7 @@ const DashboardLayout = () => {
     <div>
       <section
         id="dashboard"
-        className="flex min-h-screen pl-12 md:pl-0 mx-auto relative"
+        className="flex min-h-screen mx-auto relative"
       >
         <Sidebar />
 

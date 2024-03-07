@@ -6,9 +6,9 @@ import { Profile } from "../pages/Profile";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Contact } from "../pages/Contact";
-import DashboardLayout from "../components/layout/dashboard/DashboardLayout";
-import { Dashboard } from "../pages/seller/Dashboard";
-import { AddProduct } from "../pages/seller/AddProduct";
+import DashboardLayout from "../components/layout/DashboardLayout";
+import { routeGenerator } from "../utils/routesGenerator";
+import { sellerPaths } from "./SellerRouts";
 
 const router = createBrowserRouter([
   {
@@ -47,18 +47,9 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "seller/dashboard",
+    path: "seller",
     element: <DashboardLayout />,
-    children: [
-      {
-        path: "",
-        element: <Dashboard />,
-      },
-      {
-        path: "add-product",
-        element: <AddProduct />,
-      },
-    ],
+    children: routeGenerator(sellerPaths),
   },
 ]);
 

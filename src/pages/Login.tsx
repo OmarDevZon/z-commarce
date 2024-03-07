@@ -15,14 +15,10 @@ export const Login = () => {
   const dispatch = useAppDispatch();
   const { register, handleSubmit } = useForm();
 
-  // const onSubmit: (loginInfo: TLogin) => {
-
   const onSubmit = async (loginInfo: TLogin) => {
     try {
       const res = await login(loginInfo).unwrap();
       const user = verifyToken(res.data.accessToken) as TUser;
-
-      console.log(user.role, "file name : login line number : +-21");
 
       dispatch(setUser({ user: user, token: res.data.accessToken }));
       toast.success(res.message);
@@ -54,14 +50,14 @@ export const Login = () => {
                   className={styles.textbox}
                   type="email"
                   placeholder="Email"
-                  defaultValue="omar@gmail.com"
+                  defaultValue="exasampale@email.com"
                   {...register("email")}
                 />
                 <input
                   className={styles.textbox}
                   type="password"
                   placeholder="Password"
-                  defaultValue="OMfa35@p"
+                  defaultValue="examplePassword"
                   {...register("password")}
                 />
                 <button className={styles.btn} type="submit">
