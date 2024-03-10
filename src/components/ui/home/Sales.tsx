@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Image from "../../image";
+import Image from "../../Image";
 import saleImgOne from "../../../assets/image/sale/saleImgOne.webp";
 import saleImgTwo from "../../../assets/image/sale/saleImgTwo.webp";
 import saleImgThree from "../../../assets/image/sale/saleImgThree.webp";

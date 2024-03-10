@@ -1,4 +1,4 @@
-import Image from "../../image";
+import Image from "../../Image";
 import payment from "../../../assets/image/footer/payment.png";
 import { FooterListTitle } from "./FooterListTitle";
 import { motion } from "framer-motion";

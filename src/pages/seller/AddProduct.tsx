@@ -4,6 +4,9 @@ import toast from "react-hot-toast";
 import { useAppSelector } from "../../redux/hooks";
 import { selectCurrentUser } from "../../redux/features/auth/authSlice";
 import { useAddProductMutation } from "../../redux/features/product/productApi";
+import { Button, Row } from "antd";
+import { SaenForm } from "../from/SaenFrom";
+import { SaenInput } from "../from/SaenInput";
 
 export const AddProduct: React.FC = () => {
   const user = useAppSelector(selectCurrentUser);
@@ -34,18 +37,28 @@ export const AddProduct: React.FC = () => {
     <div className="bg-[#f0f0f1] ">
       <div className="p-4">
         <div className="mx-auto   max-w-full">
-          <form className=" mb-2 w-full" onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex flex-col gap-4">
-              <input
-                id="product_name"
-                {...register("title", { required: "Title is required" })}
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-              />
-              {errors.title && (
-                <p className="text-red-500">{errors.title.message as any}</p>
-              )}
-            </div>
-          </form>
+          <Row>
+            <SaenForm onSubmit={onSubmit} layout="horizontal">
+              <div className="grid grid-cols-3 gap-6 items-center">
+                <div>
+                  <SaenInput
+                    type="text"
+                    name="name"
+                    label="Name "
+                    rules={[
+                      {
+                        required: true,
+                        message: "Name cannot be empty.",
+                      },
+                    ]}
+                  />
+                </div>
+                <div></div>
+              </div>
+
+              <Button htmlType="submit">Login</Button>
+            </SaenForm>
+          </Row>
         </div>
       </div>
     </div>

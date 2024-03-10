@@ -9,8 +9,13 @@ import { Contact } from "../pages/Contact";
 import DashboardLayout from "../components/layout/DashboardLayout";
 import { routeGenerator } from "../utils/routesGenerator";
 import { sellerPaths } from "./SellerRouts";
+import { adminPaths } from "./admin.routs";
+import { P404 } from "../pages/P404";
+import { buyerPaths } from "./BuyerRouts";
+import { NewArrivalsAll } from "../pages/Home/NewArrivalsAll";
 
 const router = createBrowserRouter([
+  { path: "*", element: <P404 /> },
   {
     path: "/",
     element: <MainLayout />,
@@ -43,6 +48,10 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        path: "/new-arrivals",
+        element: <NewArrivalsAll />,
+      },
     ],
   },
 
@@ -50,6 +59,16 @@ const router = createBrowserRouter([
     path: "seller",
     element: <DashboardLayout />,
     children: routeGenerator(sellerPaths),
+  },
+  {
+    path: "buyer",
+    element: <DashboardLayout />,
+    children: routeGenerator(buyerPaths),
+  },
+  {
+    path: "admin",
+    element: <DashboardLayout />,
+    children: routeGenerator(adminPaths),
   },
 ]);
 

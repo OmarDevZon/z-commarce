@@ -1,25 +1,25 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { NavLink } from 'react-router-dom';
-import { TSidebarItem, TUserPath } from '../types/sidebarType';
-
+import { TSidebarItem, TUserPath } from "../types/sidebarType";
 
 // this is  a sidebar generator component
-export const sidebarItemsGenerator = (items: TUserPath[], role : any) => {
+export const sidebarItemsGenerator = (items: TUserPath[], role: any) => {
   const sidebarItems = items.reduce((acc: TSidebarItem[], item) => {
     if (item.path && item.name) {
       acc.push({
-        key: item.name,
-        label: <NavLink to={`/${role}/${item.path}`}>{item.name}</NavLink>,
+        name: item.name,
+        icon: item.icon,
+        link: `${item.path}`,
       });
     }
-
+    // make sub items
     if (item.children) {
       acc.push({
-        key: item.name,
-        label: item.name,
-        children: item.children.map((child) => ({
-          key: child.name,
-          label: <NavLink to={`/${role}/${child.path}`}>{child.name}</NavLink>,
+        name: item.name,
+        icon: item.icon,
+        subMenu: item.children.map((child) => ({
+          subName: child.name,
+          subIcon: child.icon,
+          subLink: `${child.path}`,
         })),
       });
     }

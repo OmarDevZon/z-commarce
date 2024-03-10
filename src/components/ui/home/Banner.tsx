@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import Image from "../../image";
+import Image from "../../Image";
 import bannerImgOne from "../../../assets/image/banner/bannerImgOne.webp";
 import bannerImgTwo from "../../../assets/image/banner/bannerImgTwo.webp";
 import bannerImgThree from "../../../assets/image/banner/bannerImgThree.webp";

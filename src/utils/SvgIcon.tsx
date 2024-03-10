@@ -1,6 +1,6 @@
 type TSvgIcon = {
-  className: string;
-  path: string;
+  className?: string;
+  path: string | undefined;
 };
 
 export const SvgIcon = ({ className, path }: TSvgIcon) => {
@@ -12,7 +12,7 @@ export const SvgIcon = ({ className, path }: TSvgIcon) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={className}
+        className={`h-6 w-6 ${className} `}
       >
         <path strokeLinecap="round" strokeLinejoin="round" d={path} />
       </svg>

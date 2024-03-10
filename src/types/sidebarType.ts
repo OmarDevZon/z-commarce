@@ -1,18 +1,29 @@
-import { ReactNode } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ReactNode } from "react";
 
 export type TRoute = {
   path: string;
   element: ReactNode;
 };
+
+export type TSubMenu = {
+  subName: string;
+  subLink: string;
+  subIcon?: any;
+};
+
 export type TSidebarItem = {
-  key: string;
-  label: ReactNode;
+  name: string;
+  link?: string;
+  icon?: any;
   children?: TSidebarItem[];
+  subMenu?: TSubMenu[];
 };
 
 export type TUserPath = {
   name: string;
   path?: string;
+  icon?: any;
   element?: ReactNode;
   children?: TUserPath[];
 };

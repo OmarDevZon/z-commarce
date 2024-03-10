@@ -23,3 +23,18 @@ const Card = ({ children, className }: TCard) => {
 };
 
 export default Card;
+
+
+export const CardTopAnimated = ({ children, className }: TCard) => {
+  return (
+    <motion.div
+      initial={{ }}
+      animate={{ }}
+      exit={{ }}
+      whileHover={{  marginTop: "-10px" }}
+      className={`w-full p-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300 ${className}`}
+    >
+      {children}
+    </motion.div>
+  );
+};

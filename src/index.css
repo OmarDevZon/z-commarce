@@ -3,8 +3,61 @@
 @tailwind utilities;
 
 
-/* 
-body{
-    background: #dcdce6;
-    background-image: url('./assets/Background.png');
-} */
+body {
+    @apply bg-[#f5f5f5]
+}
+
+.bg1 {
+    @apply bg-white
+}
+
+.text_primary {
+    @apply text-[#d0011b]
+}
+
+.bg_primary {
+    @apply bg-[#d0011b]
+}
+
+.bg2 {
+    @apply bg-[#f5f6f7]
+}
+
+h2{
+    @apply text-[46px] text-black
+}
+h3{
+    @apply text-black text-[1.75rem]
+}
+h4{
+    @apply text-black text-[20px]
+}
+
+p{
+    @apply text-[#5d6467] text-[16px]
+}
+
+.diver{
+    @apply border my-4
+}
+
+.primary_btn{
+    @apply border bg-[#ff6a6a] hover:bg-indigo-500 py-2 rounded-[4px] text-[#e83330] text-[16px] shadow-sm text-center;
+}
+
+
+
+a{
+    @apply text-[#5d6467] text-[20px] hover:text-[#5D6467]
+}
+
+label{
+    @apply text-[16px] font-[400] text-[red]
+}
+input{
+    @apply text-[1rem] font-[400] text-[#495057] bg-[#fff] border border-[#ced4da] rounded-[.25rem] px-[.375rem] py-[.75rem]
+}
+
+::placeholder{
+    @apply text-[#ced4da]
+}
