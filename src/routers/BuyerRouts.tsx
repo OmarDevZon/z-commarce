@@ -65,7 +65,7 @@ export const buyerPaths: TRoutsPaths = [
   {
     name: "My Order",
     icon: MdOutlineDashboardCustomize,
-    path: "my-Order",
+    path: "my-order",
     element: <MyOrder />,
   },
   {

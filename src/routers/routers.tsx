@@ -13,6 +13,7 @@ import { adminPaths } from "./admin.routs";
 import { P404 } from "../pages/P404";
 import { buyerPaths } from "./BuyerRouts";
 import { NewArrivalsAll } from "../pages/Home/NewArrivalsAll";
+import { SingleProduct } from "../pages/SingleProduct";
 
 const router = createBrowserRouter([
   { path: "*", element: <P404 /> },
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/new-arrivals",
         element: <NewArrivalsAll />,
+      },
+      {
+        path: "/single-product",
+        element: <SingleProduct />,
       },
     ],
   },

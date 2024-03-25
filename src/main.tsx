@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import 'react-range-slider-input/dist/style.css';
+import 'react-medium-image-zoom/dist/styles.css'
 import "./app.scss";
 import "react-quill/dist/quill.snow.css";
 import { RouterProvider } from "react-router-dom";

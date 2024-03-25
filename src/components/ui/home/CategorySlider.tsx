@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Slider from "react-slick";
 import Image from "../../Image";
-import Card from "../../../utils/Card";
 
 export const CategorySlider = () => {
   const settings = {

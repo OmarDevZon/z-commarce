@@ -4,7 +4,7 @@ import { SvgIcon } from "../../utils/SvgIcon";
 import ApexChart from "../../utils/ApexChart";
 import { Table } from "../../utils/Table";
 import { motion } from "framer-motion";
-import { OutLineButton } from "../../utils/Button";
+import { OutLateButton } from "../../utils/Button";
 // import ApexChart, { TChartData } from "../../utils/ApexChart";
 
 export const SellerDashboard = () => {
@@ -136,7 +136,7 @@ export const SellerDashboard = () => {
           <div className="rounded-md shadow-md hover:shadow-lg transition-all duration-300 bg-white">
             <div className="flex justify-between items-center px-4">
               <h2 className="text-xl text-[#000047] py-2 "> Lasted Seals </h2>
-              <OutLineButton
+              <OutLateButton
                 title="Views all"
                 className="bg-[#000047] text-white hover:bg-white hover:text-[#000047]"
               />
@@ -155,7 +155,7 @@ export const SellerDashboard = () => {
           <div className=" mt-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300 bg-white ">
             <div className="flex justify-between items-center px-4">
               <h2 className="text-xl text-[#000047] py-2 "> Lasted Order </h2>
-              <OutLineButton
+              <OutLateButton
                 title="Views all"
                 className="bg-[#000047] text-white hover:bg-white hover:text-[#000047]"
               />

@@ -25,6 +25,7 @@ const Header = ({ subHeader }: { subHeader: boolean }) => {
   const refCard: any = useRef();
   const showRef: any = useRef();
   const location = useLocation();
+  
   useEffect(() => {
     let ResponsiveMenu = () => {
       if (window.innerWidth < 667) {

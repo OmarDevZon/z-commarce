@@ -1,6 +1,7 @@
-import { OutLineButton } from "../../../utils/Button";
-import Card, { CardTopAnimated } from "../../../utils/Card";
+import { OutLateButton } from "../../../utils/Button";
+import { CardTopAnimated } from "../../../utils/Card";
 import { Flex } from "../../../utils/Flex";
+import { motion } from "framer-motion";
 import { SvgIcon } from "../../../utils/SvgIcon";
 import Image from "../../Image";
 
@@ -63,15 +64,27 @@ export const PhoneCategory: React.FC = () => {
   return (
     <section id="new_arrivals" className="container mx-auto mb-10">
       <div>
-        <Image className="!w-full" imgSrc="https://down-my.img.susercontent.com/file/my-50009109-0f134848b8d3f3d40bf64b5af4470390"></Image>
+        <Image
+          className="!w-full"
+          imgSrc="https://down-my.img.susercontent.com/file/my-50009109-0f134848b8d3f3d40bf64b5af4470390"
+        ></Image>
       </div>
       <div className="flex justify-between items-center">
         <p className="text-red-500 p-2  font-bold uppercase">Xiaomi 14</p>
-        <OutLineButton
-          title={"See All"}
-          className="text-red-500"
-          iconPath="m8.25 4.5 7.5 7.5-7.5 7.5"
-        />
+        <OutLateButton position="left"
+            title={"See All"}
+            className="!text-red-500 !text-sm !border-0 !bg-gray-50"
+          >
+            <motion.div
+              initial={{ scale: 1, opacity: 1 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 2, opacity: 1 }}
+              whileHover={{ paddingRight: "10px" }}
+              className="flex "
+            >
+              <SvgIcon className="!h-4 !w-4" path="m8.25 4.5 7.5 7.5-7.5 7.5"></SvgIcon>
+            </motion.div>
+          </OutLateButton>
       </div>
 
       <div className="flex justify-between items-center gap-6 bg-1">

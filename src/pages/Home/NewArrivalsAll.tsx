@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Image from "../../components/Image";
 import { CardTopAnimated } from "../../utils/Card";
 import { Flex } from "../../utils/Flex";
@@ -442,14 +443,16 @@ export const NewArrivalsAll: React.FC = () => {
               <div key={i} className="bg-white">
                 <CardTopAnimated className=" relative !p-0">
                   <div>
-                    <div className="p-1">
-                      <Image imgSrc={product.image} />
-                      {product.discount && (
-                        <p className="absolute top-1 -left-0 text-[#ee4d2d] px-2 bg-orange-200">
-                          -{product.discount}%
-                        </p>
-                      )}
-                    </div>
+                    <Link to="/single-product">
+                      <div className="p-1">
+                        <Image imgSrc={product.image} />
+                        {product.discount && (
+                          <p className="absolute top-1 -left-0 text-[#ee4d2d] px-2 bg-orange-200">
+                            -{product.discount}%
+                          </p>
+                        )}
+                      </div>
+                    </Link>
                     <div className="bg-white p-2">
                       <p>{product.title}</p>
                       {product?.spasticity && (
